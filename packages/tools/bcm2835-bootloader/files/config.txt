@@ -34,4 +34,5 @@ include distroconfig.txt
 
 # uncomment to enable infrared remote receiver connected to GPIO 18
 #dtoverlay=gpio-ir,gpio_pin=18
-
+dtoverlay=dwc2,dr_mode=host
+otg_mode=1
