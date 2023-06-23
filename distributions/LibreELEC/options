@@ -158,7 +158,7 @@
   KODI_SAMBA_SUPPORT="yes"
 
 # build kodi with alsa support (yes/no)
-  KODI_ALSA_SUPPORT="yes"
+  KODI_ALSA_SUPPORT="no"
 
 # build kodi with pulseaudio support (yes/no)
   KODI_PULSEAUDIO_SUPPORT="no"
