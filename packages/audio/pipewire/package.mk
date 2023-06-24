@@ -79,8 +79,10 @@ post_makeinstall_target() {
   # connect to the system bus
   sed '/^\[Service\]/a Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/dbus/system_bus_socket' -i ${INSTALL}/usr/lib/systemd/system/pipewire.service
 
-  mkdir -p /etc/pipewire/filter-chain.conf.d
+  mkdir -p ${INSTALL}/etc/pipewire/filter-chain.conf.d
   cp ${PKG_DIR}/filter/* ${INSTALL}/etc/pipewire/filter-chain.conf.d/
+
+  # ln -s /usr/bin/pipewire /usr/local/bin/filter-chain
 
 }
 
