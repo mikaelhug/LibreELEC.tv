@@ -81,9 +81,6 @@ post_makeinstall_target() {
 
   mkdir -p ${INSTALL}/etc/pipewire/filter-chain.conf.d
   cp ${PKG_DIR}/filter/* ${INSTALL}/etc/pipewire/filter-chain.conf.d/
-
-  # ln -s /usr/bin/pipewire /usr/local/bin/filter-chain
-
 }
 
 post_install() {
@@ -94,4 +91,5 @@ post_install() {
 
   enable_service pipewire.socket
   enable_service pipewire.service
+  enable_service filter-chain.service
 }
