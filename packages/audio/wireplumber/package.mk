@@ -41,6 +41,9 @@ EOF
   cat > ${INSTALL}/usr/share/wireplumber/bluetooth.lua.d/89-disable-bluez-hfphsp-backend.lua << EOF
 bluez_monitor.properties["bluez5.hfphsp-backend"] = "none"
 EOF
+
+  rm ${INSTALL}/usr/share/wireplumber/main.lua.d/50-alsa-config.lua
+  cp ${PKG_DIR}/deviceprofile/50-alsa-config.lua ${INSTALL}/usr/share/wireplumber/main.lua.d/
 }
 
 post_install() {
