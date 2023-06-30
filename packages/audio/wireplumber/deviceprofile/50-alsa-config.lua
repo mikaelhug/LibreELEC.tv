@@ -37,15 +37,35 @@ alsa_monitor.properties = {
 }
 
 alsa_monitor.rules = {
+  -- DEVICE CONFIGURIATION SURROUND 5.1
   {
-   matches = {
-     {
-       { "device.name", "equals", "alsa_card.usb-0d8c_USB_Sound_Device-00" },
-     },
-   },
-   apply_properties = {
-     ["device.profile"] = "output:analog-surround-51",
-   },
+    matches = {
+      {
+        { "device.name", "equals", "alsa_card.usb-0d8c_USB_Sound_Device-00" },
+      },
+    },
+    apply_properties = {
+      ["device.profile"] = "output:analog-surround-51",
+    },
+  },
+  -- SINK CONFIGURIATION SURROUND 5.1
+  {
+    matches = {
+      {
+        { "alsa.card_name", "equals", "ICUSBAUDIO7D" },
+      },
+    },
+    apply_properties = {
+      ["api.alsa.path"] = "surround51:1",
+      ["audio.channels"] = "6",
+      ["audio.position"] = "FL,FR,RL,RR,FC,LFE",
+      ["card.profile.device"] = "9",
+      ["device.profile.description"] = "Analog Surround 5.1",
+      ["device.profile.name"] = "analog-surround-51",
+      ["node.description"] = "CM106 Like Sound Device Analog Surround 5.1",
+      ["node.name"] = "alsa_output.usb-0d8c_USB_Sound_Device-00.analog-surround-51",
+      ["object.path"] = "alsa:pcm:1:surround51:1:playback"
+    },
   },
   {
     -- Rules for matching a device or node. It is an array of
