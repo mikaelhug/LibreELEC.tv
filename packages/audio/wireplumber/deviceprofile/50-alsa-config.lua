@@ -56,7 +56,6 @@ alsa_monitor.rules = {
       },
     },
     apply_properties = {
-      ["api.alsa.path"] = "surround51:1",
       ["audio.channels"] = "6",
       ["audio.position"] = "FL,FR,RL,RR,FC,LFE",
       ["card.profile.device"] = "9",
@@ -64,7 +63,6 @@ alsa_monitor.rules = {
       ["device.profile.name"] = "analog-surround-51",
       ["node.description"] = "CM106 Like Sound Device Analog Surround 5.1",
       ["node.name"] = "alsa_output.usb-0d8c_USB_Sound_Device-00.analog-surround-51",
-      ["object.path"] = "alsa:pcm:1:surround51:1:playback"
     },
   },
   {
